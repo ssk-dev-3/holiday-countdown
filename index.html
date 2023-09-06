@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>おやすみカウントダウン</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loading">
+      <span class="material-symbols-outlined logo"> schedule </span>
+    </div>
+    <div class="containerWrapper">
+      <div class="container">
+        <div class="titleLogo">
+          <span class="material-symbols-outlined logo"> schedule </span>
+          <h1 class="title">おやすみカウントダウン</h1>
+        </div>
+        <main>
+          <section id="countdown" class="countdownWrapper">
+            <div class="content">
+              <div id="today" class="today"></div>
+              <p class="nextHolidayWrapper">
+                次のおやすみ
+                <span id="nextHoliday" class="nextHoliday"></span>
+              </p>
+              <div id="timer" class="timer">
+                <span id="prefix">次のおやすみまで</span>
+                <div class="toNextHoliday">
+                  <span id="days"></span>
+                  <span id="hours"></span>
+                  <span id="minutes"></span>
+                  <span id="seconds"></span>
+                </div>
+              </div>
+            </div>
+            <p class="annotation">
+              ※おやすみは土日祝日です。<br />
+              ※おやすみ前日の18時までカウントダウンします。
+            </p>
+          </section>
+          <section id="holiday" class="content">
+            <div class="holidayMessage">
+              <span>今</span>
+              <span>日</span>
+              <span>は</span>
+              <span>お</span>
+              <span>や</span>
+              <span>す</span>
+              <span>み</span>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

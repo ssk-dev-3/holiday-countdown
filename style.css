@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'dseg7';
+  src: url('./assets/DSEG7ClassicMini-Bold.woff2') format('woff2');
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(45deg, #192b48, #1e3557);
+  color: #d6d7d8;
+  font-family: 'dseg7', sans-serif;
+  font-size: 1rem;
+  text-shadow: 0 0 6px #7c7c7c;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #192b48, #1e3557);
+  opacity: 1;
+  animation: loading 2s ease-out forwards;
+}
+
+.loading > .logo {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  height: 50px;
+  text-align: center;
+  transform: rotate(0) scale(3);
+  animation: loadingLogo 2s ease-out forwards;
+}
+
+@keyframes loadingLogo {
+  0% {
+    transform: rotate(0) scale(3);
+  }
+  60% {
+    transform: rotate(360deg) scale(3);
+  }
+  80% {
+    transform: rotate(360deg) scale(3);
+  }
+  100% {
+    transform: rotate(360deg) scale(3);
+  }
+}
+
+.containerWrapper {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: min(90vw, 420px);
+}
+
+.titleLogo {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  font-size: 3rem;
+}
+
+.title {
+  color: #e96208;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);;
+  text-shadow: 0 0 6px #7b3404;
+}
+
+.countdownWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 0.5em;
+  background: linear-gradient(145deg, #1b2e4d, #172741);
+  box-shadow: 5px 5px 16px #0f1a2c, -5px -5px 16px #233c64;
+}
+
+.today {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.nextHolidayWrapper {
+  margin-bottom: 1rem;
+}
+
+.nextHoliday {
+  margin-left: 0.5rem;
+}
+
+.timer {
+  color: #e96208;
+  text-shadow: 0 0 6px #7b3404;
+}
+
+.toNextHoliday {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  padding: 0.5rem 0;
+}
+
+.annotation {
+  font-size: 75%;
+  padding: 1rem 1.5rem;
+}
+
+.holidayMessage {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.holidayMessage > span {
+  display: inline-block;
+  opacity: 0;
+  animation: textAnimation 0.4s ease-out forwards;
+}
+
+.holidayMessage > span:nth-child(1) {
+  animation-delay: 2s;
+}
+
+.holidayMessage > span:nth-child(2) {
+  animation-delay: 2.3s;
+}
+
+.holidayMessage > span:nth-child(3) {
+  animation-delay: 2.6s;
+}
+
+.holidayMessage > span:nth-child(4) {
+  animation-delay: 2.9s;
+}
+
+.holidayMessage > span:nth-child(5) {
+  animation-delay: 3.2s;
+}
+
+.holidayMessage > span:nth-child(6) {
+  animation-delay: 3.5s;
+}
+
+.holidayMessage > span:nth-child(7) {
+  animation-delay: 3.8s;
+}
+
+@keyframes textAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-400px);
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
