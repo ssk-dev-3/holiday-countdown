@@ -1,6 +1,6 @@
 'use strict';
 
-const TODAY = new Date();
+const TODAY = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 
 /**
  * オンロード
@@ -49,8 +49,7 @@ window.onload = async () => {
  * @param {Date} nextHoliday - 次の休日
  */
 function countdown(nextHoliday) {
-  // const now = new Date();
-  const now = new Date(2023, 8, 6, new Date().getHours(), new Date().getMinutes(), new Date().getSeconds());
+  const now = new Date();
 
   // システム日時と次の休日前日の就業終了時間との差分をカウントダウンする
   const diffDaysEle = document.getElementById('days');
@@ -145,9 +144,11 @@ function isHoliday(publicHolidays){
  */
 function getNextHoliday(publicHolidays) {
   // 次の土曜日を取得する（土曜日はgetDay()の6）
-  const nextSaturday = TODAY.setDate(TODAY.getDate() + (6 - TODAY.getDay()));
+  const nextSaturday = new Date(TODAY.setDate(TODAY.getDate() + (6 - TODAY.getDay())));
+
   // 次の土曜日と祝日の中からより近い方を返す
   const nextHoliday = new Date(Math.min(...publicHolidays, nextSaturday));
+
   return nextHoliday;
 }
 
@@ -161,6 +162,7 @@ function getNextHoliday(publicHolidays) {
 function getWorkEndDateTime(nextHoliday, endHour = 18, endMinute = 0) {
   const workEndDateTime = new Date(nextHoliday.setHours(nextHoliday.getHours() - (24 - endHour)));
   workEndDateTime.setMinutes(nextHoliday.getMinutes() + endMinute);
+
   return workEndDateTime;
 }
 
